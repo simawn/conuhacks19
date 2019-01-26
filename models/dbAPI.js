@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
-const Clinics = require('./ClinicsSchema');
-const Users = require('./UsersSchema');
-const ScheduleSlots = require('./ScheduleSlots');
+const Clinics = require('./schema/ClinicsSchema');
+const Users = require('./schema/UsersSchema');
+const ScheduleSlots = require('./schema/ScheduleSlots');
 
 mongoose.connect('mongodb://localhost/conuhacks19', { useNewUrlParser: true });
 mongoose.set('useFindAndModify', false);
@@ -59,7 +59,7 @@ function createScheduleSlot(clinicId, start, end){
 //Check if schedule slot is available
 function checkValidScheduleSlot(clinicId, start, end){
     return new Promise((resolve, reject) => {
-        
+
     });
 }
 

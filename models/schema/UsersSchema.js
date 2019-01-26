@@ -7,7 +7,7 @@ let UsersSchema = new Schema({
         type: String
     },
     lastName:{
-        type: Number
+        type: String
     },
     appointments:{
         type: Object,
