@@ -3,23 +3,18 @@ const path = require('path');
 
 const app = express();
 
-app.use(express.json());
-
 //For static files (eg. img/css)
 app.use(express.static(path.join(__dirname, 'public')));
 
 //For views
 app.set('view engine', 'ejs'); //engine
-app.use('views', path.join(__dirname, 'views')); //folder
+app.set('views', path.join(__dirname, 'views')); //folder
+
+app.use(express.json());
 
 //index
 app.get('/', (req, res) => {
-    res.sendStatus(200);
-    /*
-    res.render('index', {
-        title: 'test' //<%= title %>
-    });
-    */
+    res.render('index');
 });
 
 //server run
