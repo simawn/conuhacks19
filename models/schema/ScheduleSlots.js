@@ -6,6 +6,9 @@ let ScheduleSlots = new Schema({
     clinicId:{
         type: Object
     },
+    userId:{
+        type: Object
+    },
     start:{
         type: Number //Epoch. Seconds since Jan 1, 1970
     },

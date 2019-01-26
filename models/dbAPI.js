@@ -46,13 +46,17 @@ function createClinic(name, address, lat, long, open, close){
 }
 
 //Create new schedule slot
-function createScheduleSlot(clinicId, start, end){
+function createScheduleSlot(clinicId, userId, start, end){
     return new Promise((resolve, reject) => {
         new ScheduleSlots({
-            clinicId: clinicId,
+            clinicId: mongoose.Types.ObjectId(clinicId),
+            userId: mongoose.Types.ObjectId(userId),
             start: start, //Unix Time. Seconds elapsed
             end: end //Unix Time. Seconds elapsed
-        })
+        }).save((err, result) => {
+            if(err) reject(err);
+            resolve(result);
+        });
     });
 }
 
@@ -60,7 +64,7 @@ function createScheduleSlot(clinicId, start, end){
 function getAllAppointmentsFrom(clinicId){
     return new Promise((resolve, reject) => {
         ScheduleSlots.find({
-            clinicId: clinicId
+            clinicId: mongoose.Types.ObjectId(clinicId)
         }).exec((err, result) => {
             if(err) reject(err);
             resolve(result);
