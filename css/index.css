@@ -1,0 +1,17 @@
+body {
+  background-color: #E1F5C4;
+}
+
+div {
+  float: left;
+  width: 50%;
+  height: 100%;
+}
+
+button {
+  margin-left: 45%;
+  margin-top: 45%;
+  padding: 20px 50px 20px 50px;
+  border-radius: 10px;
+  background-color: #F9D423;
+}
