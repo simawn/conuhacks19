@@ -56,13 +56,32 @@ function createScheduleSlot(clinicId, start, end){
     });
 }
 
-//Check if schedule slot is available
-function checkValidScheduleSlot(clinicId, start, end){
+//Returns all appointments for the specified clinic
+function getAllAppointmentsFrom(clinicId){
     return new Promise((resolve, reject) => {
+        ScheduleSlots.find({
+            clinicId: clinicId
+        }).exec((err, result) => {
+            if(err) reject(err);
+            resolve(result);
+        });
+    });
+}
 
+//Return clinic info
+function getClinicInfoFor(clinicId){
+    return new Promise((resolve, reject) => {
+        Clinics.find({
+            _id: clinicId
+        }).exec((err, result) => {
+            if(err) reject(err);
+            resolve(result);
+        })
     });
 }
 
 module.exports.createUser = createUser;
 module.exports.createClinic = createClinic;
 module.exports.createScheduleSlot = createScheduleSlot;
+module.exports.getAllAppointmentsFrom = getAllAppointmentsFrom;
+module.exports.getClinicInfoFor = getClinicInfoFor;

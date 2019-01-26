@@ -29,7 +29,13 @@ app.post('/api/createClinic', async (req, res) => {
 });
 
 app.post('/api/createScheduleSpot', async (req, res) => {
-    res.send('ok');
+    clinicId = req.body.clinicId;
+    start = req.body.unixStart;
+    end = req.body.unixEnd;
+
+    appointments = await dbAPI.getAllAppointmentsFrom(clinicId);
+
+    //
 });
 
 let port = process.env.PORT || 3000;
