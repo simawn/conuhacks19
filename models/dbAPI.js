@@ -84,8 +84,21 @@ function getClinicInfoFor(clinicId){
     });
 }
 
+//Return all clinic info
+function getAllClinics(){
+    return new Promise((resolve, reject) => {
+        Clinics.find({
+            //ALL
+        }).exec((err, result) => {
+            if(err) reject(err);
+            resolve(result);
+        });
+    });
+}
+
 module.exports.createUser = createUser;
 module.exports.createClinic = createClinic;
 module.exports.createScheduleSlot = createScheduleSlot;
 module.exports.getAllAppointmentsFrom = getAllAppointmentsFrom;
 module.exports.getClinicInfoFor = getClinicInfoFor;
+module.exports.getAllClinics = getAllClinics;
