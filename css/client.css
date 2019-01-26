@@ -1,0 +1,26 @@
+body {
+  background-image: linear-gradient(orange, yellow);
+}
+
+.clinic {
+  height: 20%;
+  width: 25%;
+  background-image: url("https://www.desktopbackground.org/p/2014/08/03/803515_sun-life-financial_1024x768_h.jpg");
+  color: darkblue;
+  border: 1px solid darkblue;
+  list-style-type: none;
+}
+
+.name {
+  font-weight: bold;
+}
+
+.add {
+  font-style: italic;
+}
+
+
+div.clinics {
+  width: 100%;
+  height: 100%;
+}
