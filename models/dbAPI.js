@@ -29,15 +29,15 @@ function createUser(firstName, lastName){
 }
 
 //Create new clinic
-function createClinic(name, address, long, lat, open, close){
+function createClinic(name, address, lat, long, open, close){
     return new Promise((resolve, reject) => {
         new Clinics({
             name: name,
             address: address,
             long: long,
             lat: lat,
-            open: open,
-            close: close
+            open: open, //410 ==> 8am: 480 = 8*60
+            close: close //1020 ==> 5pm: 1020 = 17*60 
         }).save((err, result) => {
             if(err) reject(err);
             resolve(result);
@@ -50,8 +50,8 @@ function createScheduleSlot(clinicId, start, end){
     return new Promise((resolve, reject) => {
         new ScheduleSlots({
             clinicId: clinicId,
-            start: start,
-            end: end
+            start: start, //Unix Time. Seconds elapsed
+            end: end //Unix Time. Seconds elapsed
         })
     });
 }

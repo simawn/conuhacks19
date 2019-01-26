@@ -7,10 +7,10 @@ let ScheduleSlots = new Schema({
         type: Object
     },
     start:{
-        type: Date
+        type: Number //Epoch. Seconds since Jan 1, 1970
     },
     end:{
-        type: Date
+        type: Number //Epoch
     }
 });
 

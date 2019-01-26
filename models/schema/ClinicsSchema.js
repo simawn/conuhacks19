@@ -16,10 +16,10 @@ let ClinicsSchema = new Schema({
         type: Number
     },
     open:{
-        type: Number
+        type: Number //Range: 0 - 1440. Convert the hours in minutes
     },
     close:{
-        type: Number
+        type: Number //Same as above
     },
 });
 

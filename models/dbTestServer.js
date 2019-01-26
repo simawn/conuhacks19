@@ -12,13 +12,20 @@ app.post('/api/createUser', async (req, res) => {
     firstName = req.body.firstName;
     lastName = req.body.lastName;
     console.log(`${firstName} and ${lastName}`);
-    createUser = await dbAPI.createUser(firstName, lastName).catch((err) => console.log(err));
-    res.send(createUser);
+    newUser = await dbAPI.createUser(firstName, lastName).catch((err) => console.log(err));
+    res.send(newUser);
 });
 
 app.post('/api/createClinic', async (req, res) => {
-    console.log(req.body.name);
-    res.send('ok');
+    name = req.body.name;
+    address = req.body.address;
+    lat = req.body.lat;
+    long = req.body.long;
+    open = req.body.open;
+    close = req.body.close;
+
+    newClinic = await dbAPI.createClinic(name, address, lat, long, open, close);
+    res.send(newClinic);
 });
 
 app.post('/api/createScheduleSpot', async (req, res) => {
