@@ -9,8 +9,13 @@ let UsersSchema = new Schema({
     lastName:{
         type: Number
     },
+    appointments:{
+        type: Object,
+        default: []
+    },
     history:{
-        type: Number
+        type: Object,
+        default: []
     }
 });
 
