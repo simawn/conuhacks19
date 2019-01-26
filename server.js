@@ -29,6 +29,10 @@ app.get('/client', async (req, res) => {
     });
 });
 
+//doctor
+app.get('/doctor', (req, res) => {
+    res.render('doctor');
+});
 
 //API ENDPOINTS
 app.post('/api/createClinic', async (req, res) => {
