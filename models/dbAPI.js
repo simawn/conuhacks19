@@ -75,8 +75,20 @@ function getAllAppointmentsFrom(clinicId){
 //Return clinic info
 function getClinicInfoFor(clinicId){
     return new Promise((resolve, reject) => {
-        Clinics.find({
-            _id: clinicId
+        Clinics.findOne({
+            _id: mongoose.Types.ObjectId(clinicId)
+        }).exec((err, result) => {
+            if(err) reject(err);
+            resolve(result);
+        })
+    });
+}
+
+//Return user info
+function getUserInfoFor(userId){
+    return new Promise((resolve, reject) => {
+        Users.findOne({
+            _id: mongoose.Types.ObjectId(userId)
         }).exec((err, result) => {
             if(err) reject(err);
             resolve(result);
@@ -113,3 +125,4 @@ module.exports.getAllAppointmentsFrom = getAllAppointmentsFrom;
 module.exports.getClinicInfoFor = getClinicInfoFor;
 module.exports.getAllClinics = getAllClinics;
 module.exports.getUserAppointmentsForUser = getUserAppointmentsForUser;
+module.exports.getUserInfoFor = getUserInfoFor;

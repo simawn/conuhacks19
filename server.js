@@ -34,6 +34,20 @@ app.get('/doctor', (req, res) => {
     res.render('doctor');
 });
 
+//appointment
+app.get('/appointment/:userId/:clinicId', async (req, res) => {
+    let userId = req.params.userId;
+    let clinicId = req.params.clinicId;
+    let userObj = await dbAPI.getUserInfoFor(userId);
+    let clinicObj = await dbAPI.getClinicInfoFor(clinicId);
+    res.render('appointment', {
+        userName: userObj.firstName,
+        clinicName: clinicObj.name,
+        userId: userObj._id,
+        clinicId: clinicObj._id
+    });
+})
+
 /**
  * =====
  * API ENDPOINTS

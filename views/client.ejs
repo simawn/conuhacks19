@@ -29,27 +29,30 @@
           zoom: 10
         });
         var clinics = <%-JSON.stringify(getAllClinics)%>; //Saves var from server
+        var userId = "5c4cc4e2a78cb71f480bb4e9";
         clinics.forEach((clinic) => {
           var lat = clinic.lat;
           var long = clinic.long;
           var name = clinic.name;
           var address = clinic.address;
-          var id = clinic._id;
+          var clicnicId = clinic._id;
           var m = new google.maps.Marker({
             position: {lat: lat, lng: long},
             map: map,
             name: name,
             address: address,
-            id: id
+            clicnicId: clicnicId
           });
-          popup(m, id);
+          popup(m, userId, clicnicId, name, address);
         })
         //addMarker(45.497115, -73.5886967, "Montreal General Hospital", "1650 Cedar Ave, Montreal, QC H3G 1A4", "5c4d181acffbde03984ec16f");
         //Add marker function
 
-        function popup(marker, secretMessage) {
+        function popup(marker, userId, clinicId, name, addr) {
           var infowindow = new google.maps.InfoWindow({
-            content: secretMessage,
+            content: '<b>' + name + '</b>'+ '</br>' + 
+            addr + '</br>' + 
+            '<a href=appointment/'+ userId +'/'+ clinicId +'>Click here to make an appointment</a>',
           });
 
           marker.addListener('click', function() {
