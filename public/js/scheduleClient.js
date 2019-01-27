@@ -1,0 +1,19 @@
+$(document).ready(function(){
+  $("#schedule").fullCalendar({
+    weekends: false,
+    defaultView:'agendaWeek',
+    minTime: "08:0:00",
+    maxTime: "18:00:00",
+    slotDuration: "00:15:00",
+    allDaySlot: false,
+    themeSystem: 'bootstrap3',
+    header: false,
+    selectable: true,
+    selectHelper: true,
+    selectOverlap: false,
+    contentHeight: 700,
+    eventColor: '#FE4365',
+    eventBorderColor: "#FC9D9A"
+    //nowIndicator: true,
+  });
+});
