@@ -96,9 +96,20 @@ function getAllClinics(){
     });
 }
 
+function getUserAppointmentsForUser(userId){
+    return new Promise((resolve, reject) => {
+        ScheduleSlots.find({
+            userId: mongoose.Types.ObjectId(userId)
+        }).exec((err, result) => {
+            resolve(result);
+        });
+    });
+}
+
 module.exports.createUser = createUser;
 module.exports.createClinic = createClinic;
 module.exports.createScheduleSlot = createScheduleSlot;
 module.exports.getAllAppointmentsFrom = getAllAppointmentsFrom;
 module.exports.getClinicInfoFor = getClinicInfoFor;
 module.exports.getAllClinics = getAllClinics;
+module.exports.getUserAppointmentsForUser = getUserAppointmentsForUser;

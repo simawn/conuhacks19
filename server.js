@@ -76,10 +76,19 @@ app.post('/api/createScheduleSpot', async (req, res) => {
     res.send(newScheduleSpot);
 });
 
+//Use post instead?
 app.get('/api/getAllAppointmentsFrom/:clinicId', async (req, res) => {
     clinicId = req.params.clinicId;
 
     allAppointments = await dbAPI.getAllAppointmentsFrom(clinicId);
+
+    res.send(allAppointments);
+});
+
+app.get('/api/getAppointmentsForUser/:userId', async (req, res) => {
+    userId = req.params.userId;
+
+    allAppointments = await dbAPI.getUserAppointmentsForUser(userId);
 
     res.send(allAppointments);
 });
