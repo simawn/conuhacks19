@@ -18,6 +18,10 @@ textarea {
   display: inline-block;
 }
 
+#pop {
+  display: none;
+}
+
 #header {
   font-size: 45px;
 }

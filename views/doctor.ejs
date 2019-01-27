@@ -10,6 +10,8 @@
       <p> Current appointments for <strong><%= clinicName%></strong> <a href="/" class="button"><i class="fa fa-home"></i></a> </p>
     </div>
 
+    <div class="form-style-2" id="pop">grfjenhbrjk</div>
+
     <div class="calendar">
 
   <header>
@@ -246,12 +248,17 @@
 var clinicSlots = <%-JSON.stringify(listClinicSlots)%>;
 clinicSlots.forEach((td_id) => {
   var cellId = document.getElementById(td_id.cellId);
-var BlockedCell = document.createElement('div');
-BlockedCell.className = "event single";
-BlockedCell.textContent = 'Appointment';
-cellId.appendChild(BlockedCell);
+  var BlockedCell = document.createElement('div');
+  BlockedCell.className = "event single";
+  BlockedCell.textContent = 'Appointment';
+  cellId.appendChild(BlockedCell);
 });
 
+</script>
+
+<script>
+var listClinicSlots = <%-JSON.stringify(listClinicSlots)%>;
+listClinicSlots.forEach(())
 </script>
 
   </body>
