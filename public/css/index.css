@@ -1,7 +1,3 @@
-body {
-  background-color: #F9CDAD;
-}
-
 div {
   float: left;
   width: 50%;
@@ -14,4 +10,10 @@ button {
   padding: 20px 50px 20px 50px;
   border-radius: 10px;
   background-color: #FC9D9A;
+}
+
+body {
+    background-image: url("https://www.aci.health.nsw.gov.au/__data/assets/image/0005/278069/patients.png");
+    background-repeat: no-repeat;
+    background-size: 50% 100%;
 }

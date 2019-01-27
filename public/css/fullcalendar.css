@@ -10,7 +10,14 @@ ul {
   list-style-type: none;
 }
 
-#listPatient #listOfClinics{
+#listPatient{
+  height: 100%;
+  width: 25%;
+  background-color: #83AF9B;
+  float: right;
+}
+
+#listOfClinics{
   height: 100%;
   width: 25%;
   background-color: #83AF9B;
