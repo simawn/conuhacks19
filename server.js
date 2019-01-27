@@ -35,7 +35,7 @@ app.post('/doctor', async (req, res) => {
     clinicId = req.body.clinicID;
     clinicSlots = await dbAPI.getAllAppointmentsFrom(clinicId);
     clinicObj = await dbAPI.getClinicInfoFor(clinicId);
-    console.log(req.body);
+    console.log(clinicSlots);
     res.render('doctor', {
         listClinicSlots: clinicSlots,
         clinicName: clinicObj.name

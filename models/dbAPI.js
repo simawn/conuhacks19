@@ -131,17 +131,6 @@ function getUserAppointmentsForUserClinic(userId, clinicId){
     });
 }
 
-function getSlotDetail(clinicId, cellId){
-    return new Promise((resolve, reject) => {
-        ScheduleSlots.findOne({
-            clinicId: mongoose.Types.ObjectId(clinicId),
-            cellId: cellId
-        }).exec((err, result) => {
-            resolve(result);
-        });
-    });
-}
-
 function getAllBlockedTimesForUser(userId, clinicId){
     return new Promise((resolve, reject) => {
         ScheduleSlots.find({
@@ -161,4 +150,3 @@ module.exports.getAllClinics = getAllClinics;
 module.exports.getUserAppointmentsForUser = getUserAppointmentsForUser;
 module.exports.getUserInfoFor = getUserInfoFor;
 module.exports.getUserAppointmentsForUserClinic = getUserAppointmentsForUserClinic;
-module.exports.getSlotDetail = getSlotDetail;
