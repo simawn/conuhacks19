@@ -34,7 +34,20 @@ app.get('/doctor', (req, res) => {
     res.render('doctor');
 });
 
-//API ENDPOINTS
+/**
+ * =====
+ * API ENDPOINTS
+ * =====
+ */
+
+app.post('/api/createUser', async (req, res) => {
+    firstName = req.body.firstName;
+    lastName = req.body.lastName;
+    console.log(`${firstName} and ${lastName}`);
+    newUser = await dbAPI.createUser(firstName, lastName).catch((err) => console.log(err));
+    res.send(newUser);
+});
+
 app.post('/api/createClinic', async (req, res) => {
     name = req.body.name;
     address = req.body.address;
@@ -45,6 +58,30 @@ app.post('/api/createClinic', async (req, res) => {
 
     newClinic = await dbAPI.createClinic(name, address, lat, long, open, close);
     res.send(newClinic);
+});
+
+app.post('/api/createScheduleSpot', async (req, res) => {
+    clinicId = req.body.clinicId;
+    userId = req.body.userId;
+    start = req.body.unixStart;
+    end = req.body.unixEnd;
+
+    newScheduleSpot = await dbAPI.createScheduleSlot(clinicId, userId, start, end);
+    //appointments = await dbAPI.getAllAppointmentsFrom(clinicId);
+    //clinicInfo = await dbAPI.getClinicInfoFor(clinicId);
+
+    //Check if requested hours is within range of opening hours
+
+    //Check if requested hours range is in a valid spot and not overlapping existing slots.
+    res.send(newScheduleSpot);
+});
+
+app.get('/api/getAllAppointmentsFrom/:clinicId', async (req, res) => {
+    clinicId = req.params.clinicId;
+
+    allAppointments = await dbAPI.getAllAppointmentsFrom(clinicId);
+
+    res.send(allAppointments);
 });
 
 //server run
