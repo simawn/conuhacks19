@@ -1,3 +1,7 @@
+import { createScheduleSlot } from "../models/dbAPI";
+
+
+
 $(document).ready(function(){
   $("#schedule").fullCalendar({
     weekends: false,
@@ -14,7 +18,11 @@ $(document).ready(function(){
     contentHeight: 700,
     editable: true,
     eventColor: '#FE4365',
-    eventBorderColor: "#FC9D9A"
-    //nowIndicator: true,
+    eventBorderColor: "#FC9D9A",
+    select: function(startDate, endDate, jsEvent, view, [ressource]){
+      // Insert appointment in db
+      // HARD CODED CLINICID AND USERID
+      createScheduleSlot("5c4ccbea6eb4fb4168c5218f","5c4cc4e2a78cb71f480bb4e9", startDate.format(), endDate.format());
+    },
   });
 });
