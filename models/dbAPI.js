@@ -46,11 +46,13 @@ function createClinic(name, address, lat, long, open, close){
 }
 
 //Create new schedule slot
-function createScheduleSlot(clinicId, userId, cellId, symptoms){
+function createScheduleSlot(clinicId, userId, firstName, lastName, cellId, symptoms){
     return new Promise((resolve, reject) => {
         new ScheduleSlots({
             clinicId: mongoose.Types.ObjectId(clinicId),
             userId: mongoose.Types.ObjectId(userId),
+            firstName: firstName,
+            lastName: lastName,
             cellId: cellId, //Unix Time. Seconds elapsed
             symptoms: symptoms //Unix Time. Seconds elapsed
         }).save((err, result) => {
@@ -129,6 +131,27 @@ function getUserAppointmentsForUserClinic(userId, clinicId){
     });
 }
 
+function getSlotDetail(clinicId, cellId){
+    return new Promise((resolve, reject) => {
+        ScheduleSlots.findOne({
+            clinicId: mongoose.Types.ObjectId(clinicId),
+            cellId: cellId
+        }).exec((err, result) => {
+            resolve(result);
+        });
+    });
+}
+
+function getAllBlockedTimesForUser(userId, clinicId){
+    return new Promise((resolve, reject) => {
+        ScheduleSlots.find({
+            clinicId: mongoose.Types.ObjectId(clinicId)
+        }).exec((err, result) => {
+            resolve(result);
+        });
+    })
+}
+
 module.exports.createUser = createUser;
 module.exports.createClinic = createClinic;
 module.exports.createScheduleSlot = createScheduleSlot;
@@ -138,3 +161,4 @@ module.exports.getAllClinics = getAllClinics;
 module.exports.getUserAppointmentsForUser = getUserAppointmentsForUser;
 module.exports.getUserInfoFor = getUserInfoFor;
 module.exports.getUserAppointmentsForUserClinic = getUserAppointmentsForUserClinic;
+module.exports.getSlotDetail = getSlotDetail;

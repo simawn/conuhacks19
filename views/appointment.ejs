@@ -8,10 +8,8 @@
   <body>
 
     <form id='form' class="form-style-2" method="post" action="/confirmAppointment">
-    <!--
-      <input placeholder="First name" name="fname" type="text" value="" required />
-      <input placeholder="Last name" name="lname" type="text" value="" required />
-      -->
+      <input type='hidden' name="firstName" value="<%= firstName %>" />
+      <input type='hidden' name="lastName" value="<%= lastName %>" />
       <input id="cell" type='hidden' name="cellId" value="" />
       <input type='hidden' name="userId" value="<%= userId %>" />
       <input type='hidden' name="clinicId" value="<%= clinicId %>" />

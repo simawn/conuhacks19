@@ -9,6 +9,12 @@ let ScheduleSlots = new Schema({
     userId:{
         type: Object
     },
+    firstName:{
+        type: String
+    },
+    lastName:{
+        type: String
+    },
     cellId:{
         type: Number
     },

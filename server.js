@@ -53,6 +53,8 @@ app.post('/appointment', async (req, res) => {
     let userSlots = await dbAPI.getUserAppointmentsForUserClinic(userId, clinicId);
     console.log(userSlots);
     res.render('appointment', {
+        firstName: userObj.firstName,
+        lastName: userObj.lastName,
         userName: userObj.firstName,
         clinicName: clinicObj.name,
         userId: userObj._id,
@@ -63,14 +65,14 @@ app.post('/appointment', async (req, res) => {
 
 //appointment confirmation
 app.post('/confirmAppointment', async (req, res) => {
-    firstName = req.body.fname;
-    lastName = req.body.lname;
+    firstName = req.body.firstName;
+    lastName = req.body.lastName;
     cellId = req.body.cellId;
     userId = req.body.userId;
     clinicId = req.body.clinicId;
     symptoms = req.body.symptoms;
     console.log(`${firstName}, ${lastName}, ${cellId}, ${userId}, ${clinicId}, ${symptoms}`);
-    addAppointment = await dbAPI.createScheduleSlot(clinicId, userId, cellId, symptoms);
+    addAppointment = await dbAPI.createScheduleSlot(clinicId, userId, firstName, lastName, cellId, symptoms);
     res.render('confirm', {
         userId: userId,
         clinicId: clinicId
