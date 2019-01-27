@@ -18,11 +18,26 @@ for (var i = 0; i < tdElements.length; i++) {
 }
 
 
-  popElement.addEventListener('click', function(e){
-    if(postElement.style.display){
-      postElement.style.display = 'block';
+for (var i = 0; i < tdElements.length; i++) {
+  tdElements[i].addEventListener('click', function(e){
+    if(popElement.style.display){
+      popElement.style.display = 'block';
     }else{
-      postElement.style.display = 'none';
+      popElement.style.display = 'none';
     }
-    document.getElementById('cell').value = this.id;
+    
+    //console.log(clinicSlotsTest);
+    clinicSlotsTest.forEach((cid) => {
+      if(cid.cellId == this.id){
+        popElement.innerHTML = "<strong>First name : </strong>";
+        popElement.innerHTML += cid.firstName;
+        popElement.innerHTML += '</br></br>';
+        popElement.innerHTML += "<strong>Last name : </strong>";
+        popElement.innerHTML += cid.lastName;
+        popElement.innerHTML += '</br></br>';
+        popElement.innerHTML += "<strong>Symptoms : </strong>"
+        popElement.innerHTML += cid.symptoms;
+      }
+    });
   })
+}

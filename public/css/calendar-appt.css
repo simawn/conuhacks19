@@ -20,6 +20,16 @@ textarea {
 
 #pop {
   display: none;
+  position: absolute;
+  margin-top: 100px;
+  margin-left: 450px;
+  z-index: 10;
+  background-color: #fafafa;
+  height: 350px;
+  width: 175px;
+  padding: 40px 20px 40px 20px;
+  border-radius: 3px;
+  border: 2px solid rgb(234, 171, 0);
 }
 
 #header {

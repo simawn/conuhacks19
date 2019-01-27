@@ -10,7 +10,8 @@
       <p> Current appointments for <strong><%= clinicName%></strong> <a href="/" class="button"><i class="fa fa-home"></i></a> </p>
     </div>
 
-    <div class="form-style-2" id="pop">grfjenhbrjk</div>
+    <div id="pop">
+    </div>
 
     <div class="calendar">
 
@@ -242,8 +243,11 @@
 </div>
 </div>
 
-
+<script>
+var clinicSlotsTest = <%-JSON.stringify(listClinicSlots)%>;
+</script>
     <script src='js/calendar.appt.js'></script>
+
 <script>
 var clinicSlots = <%-JSON.stringify(listClinicSlots)%>;
 clinicSlots.forEach((td_id) => {
@@ -258,7 +262,6 @@ clinicSlots.forEach((td_id) => {
 
 <script>
 var listClinicSlots = <%-JSON.stringify(listClinicSlots)%>;
-listClinicSlots.forEach(())
 </script>
 
   </body>
