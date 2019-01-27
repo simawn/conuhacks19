@@ -5,7 +5,7 @@ const path = require('path');
 const dbAPI = require('./models/dbAPI');
 
 const app = express();
-
+app.use(require('body-parser').urlencoded());
 //For static files (eg. img/css)
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -33,6 +33,22 @@ app.get('/client', async (req, res) => {
 app.get('/doctor', (req, res) => {
     res.render('doctor');
 });
+
+//appointment
+app.post('/appointment', async (req, res) => {
+    let userId = req.body.userId;
+    let clinicId = req.body.clinicId;
+    console.log(userId);
+    console.log(clinicId);
+    let userObj = await dbAPI.getUserInfoFor(userId);
+    let clinicObj = await dbAPI.getClinicInfoFor(clinicId);
+    res.render('appointment', {
+        userName: userObj.firstName,
+        clinicName: clinicObj.name,
+        userId: userObj._id,
+        clinicId: clinicObj._id
+    });
+})
 
 /**
  * =====
