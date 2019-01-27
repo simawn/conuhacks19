@@ -43,11 +43,14 @@ app.post('/appointment', async (req, res) => {
     console.log(clinicId);
     let userObj = await dbAPI.getUserInfoFor(userId);
     let clinicObj = await dbAPI.getClinicInfoFor(clinicId);
+    let userSlots = await dbAPI.getUserAppointmentsForUserClinic(userId, clinicId);
+    console.log(userSlots);
     res.render('appointment', {
         userName: userObj.firstName,
         clinicName: clinicObj.name,
         userId: userObj._id,
-        clinicId: clinicObj._id
+        clinicId: clinicObj._id,
+        userSlots: userSlots
     });
 })
 

@@ -257,11 +257,15 @@
 
         
 <script>
-var cellId = document.getElementById('1');
+var userSlots = <%-JSON.stringify(userSlots)%>;
+userSlots.forEach((td_id) => {
+  var cellId = document.getElementById(td_id.cellId);
 var BlockedCell = document.createElement('div');
 BlockedCell.className = "event single";
 BlockedCell.textContent = 'Appointment';
 cellId.appendChild(BlockedCell);
+});
+
 </script>
   </body>
 </html>
