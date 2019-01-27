@@ -6,13 +6,16 @@
   </head>
   <body>
 
-    <form id='form' class="form-style-2" action="#">
-      <input placeholder="First name" name="fname" type="text" required />
-      <input placeholder="Last name" name="lname" type="text" required />
+    <form id='form' class="form-style-2" method="post" action="/confirmAppointment">
+      <input placeholder="First name" name="fname" type="text" value="" required />
+      <input placeholder="Last name" name="lname" type="text" value="" required />
       <input id="cell" type='hidden' name="cellId" value="" />
-      <textarea placeholder="Describe your symptoms"></textarea><br/>
-      <input class="formBtn" type="submit" method='post' action='/createAppointment'/>
+      <input type='hidden' name="userId" value="<%= userId %>" />
+      <input type='hidden' name="clinicId" value="<%= clinicId %>" />
+      <textarea placeholder="Describe your symptoms" name="symptoms"></textarea><br/>
+      <input class="formBtn" type="submit"/>
     </form>
+
  <div id="header">
       <p> Hi <strong><%= userName%></strong></p>
       <p> Let's make an appointment to <strong> <%= clinicName%></strong></p>

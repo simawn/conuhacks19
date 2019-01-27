@@ -51,6 +51,19 @@ app.post('/appointment', async (req, res) => {
     });
 })
 
+//appointment confirmation
+app.post('/confirmAppointment', async (req, res) => {
+    firstName = req.body.fname;
+    lastName = req.body.lname;
+    cellId = req.body.cellId;
+    userId = req.body.userId;
+    clinicId = req.body.clinicId;
+    console.log(`${firstName}, ${lastName}, ${cellId}, ${userId}, ${clinicId}`);
+    res.render('confirm', {
+        userId: userId,
+        clinicId: clinicId
+    });
+});
 /**
  * =====
  * API ENDPOINTS

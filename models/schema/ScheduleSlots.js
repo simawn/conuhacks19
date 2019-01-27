@@ -9,11 +9,11 @@ let ScheduleSlots = new Schema({
     userId:{
         type: Object
     },
-    start:{
-        type: Number //Epoch. Seconds since Jan 1, 1970
+    cellId:{
+        type: Number
     },
-    end:{
-        type: Number //Epoch
+    symptoms:{
+        type: String
     }
 });
 
