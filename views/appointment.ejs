@@ -3,6 +3,7 @@
     <meta charset="utf-8">
     <title></title>
     <link rel="stylesheet" href="css/calendar-appt.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
 
@@ -20,7 +21,7 @@
 
 
  <div id="header">
-      <p> Hi <strong><%= userName%></strong></p>
+      <p> Hi <strong><%= userName%></strong> <a href="/" class="button"><i class="fa fa-home"></i></a> </p>
       <p> Let's make an appointment to <strong> <%= clinicName%></strong></p>
     </div>
 
@@ -257,7 +258,7 @@
 
     <script src='js/calendar.appt.js'></script>
 
-        
+
 <script>
 var userSlots = <%-JSON.stringify(userSlots)%>;
 userSlots.forEach((td_id) => {
