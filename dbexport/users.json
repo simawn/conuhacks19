@@ -1,0 +1,3 @@
+{"_id":{"$oid":"5c4cc4e2a78cb71f480bb4e9"},"firstName":"Simon","lastName":"Huang","appointments":[],"history":[],"__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5c4d685ac500901fe0268542"},"firstName":"Alexis","lastName":"Chebeia"}
+{"_id":{"$oid":"5c4d688bc500901fe0268543"},"firstName":"Emmy","lastName":"Nadeau"}
