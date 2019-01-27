@@ -21,11 +21,12 @@ app.get('/', (req, res) => {
 });
 
 //client
-app.get('/client', async (req, res) => {
+app.get('/client/:userId', async (req, res) => {
     getAllClinics = await dbAPI.getAllClinics();
     console.log(getAllClinics);
     res.render('client', {
-        listOfClinics: getAllClinics
+        listOfClinics: getAllClinics,
+        userId: req.params.userId
     });
 });
 

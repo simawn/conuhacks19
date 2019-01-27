@@ -11,15 +11,17 @@
   <link rel="stylesheet" href="./css/index.css">
 
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-
+<link rel="stylesheet" type="text/css" href="https://csshake.surge.sh/csshake.min.css">
 </head>
 
 <body>
-  <div class="container">
-  </div>
+  <h1>MedSched</h1>
   <div class="row">
     <div class="col" id="client">
+    <!--
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7g5nMVV6uUjQdi1-CoN0Mf2GQGZCKHV7s_npR6ftRMiRNtbl1" class="image" style = "height: 780px; width:100%">
+      -->
+      <i class="fas fa-user-injured image" style="font-size: 40em; color: #b070ff"></i>
       <div class="middle">
         <form class="form" onsubmit="location.href='./client/' + document.getElementById('clientID').value; return false;" method="post">
           <input type="text" id="clientID" name="clientID" placeholder="ID" required><br><br>
@@ -28,7 +30,10 @@
       </div>
     </div>
     <div class="col" id="doctor">
+    <!--
       <img src="https://cdn2.iconfinder.com/data/icons/medicine-4-1/512/doctor_appointment-512.png" class="image" style = "height: 715px; width:100%">
+      -->
+      <i class="fas fa-user-md image" style="font-size: 40em; color: #70a6ff"></i>
       <div class="middle">
         <form class="form" onsubmit="location.href='./doctor/' + document.getElementById('doctorID').value; return false;" method="post">
           <input type="text" id= "doctorID" name="doctorID" placeholder="ID" required><br><br>

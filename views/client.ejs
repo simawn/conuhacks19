@@ -28,7 +28,8 @@
           zoom: 10
         });
         var clinics = <%-JSON.stringify(getAllClinics)%>; //Saves var from server
-        var userId = "5c4cc4e2a78cb71f480bb4e9";
+        var userId = <%-JSON.stringify(userId)%>;
+        console.log(userId);
         clinics.forEach((clinic) => {
           var lat = clinic.lat;
           var long = clinic.long;
