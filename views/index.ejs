@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Medical Appointment System</title>
+  <title>MedSched</title>
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
     crossorigin="anonymous">
@@ -40,8 +40,8 @@
       <i class="fas fa-user-md image" style="font-size: 30em; color: #003946"></i>
       </div>
       <div class="middle">
-        <form class="form" onsubmit="location.href='./doctor/' + document.getElementById('doctorID').value; return false;" method="post">
-          <input type="text" id= "doctorID" name="doctorID" placeholder="ID" required><br><br>
+        <form action="/doctor" method="post">
+          <input type="text" id="clinicID" name="clinicID" placeholder="ID" required><br><br>
           <input type="submit" value="Doctor" class="btn btn-primary btn-lg">
         </form>
       </div>

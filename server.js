@@ -30,9 +30,12 @@ app.get('/client/:userId', async (req, res) => {
     });
 });
 
-//doctor
-app.get('/doctor', (req, res) => {
-    res.render('doctor');
+//doctor. We cannot GET since it will break the CSS
+app.post('/doctor', async (req, res) => {
+    clinicId = req.body.clinicID;
+    console.log(req.body);
+    res.send(clinicId);
+    //res.render('doctor');
 });
 
 //appointment

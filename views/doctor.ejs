@@ -1,55 +1,245 @@
-<!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title> Doctor View </title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel='stylesheet' href='css/fullcalendar.css' />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="js/moment.min.js"></script>
-    <script src='js/fullcalendar.js'></script>
+    <title></title>
+    <link rel="stylesheet" href="css/calendar-appt.css">
   </head>
   <body>
-<script>
-    
-$(document).ready(function(){
-  $("#schedule").fullCalendar({
-    weekends: false,
-    defaultView:'agendaWeek',
-    minTime: "08:0:00",
-    maxTime: "18:00:00",
-    slotDuration: "00:15:00",
-    allDaySlot: false,
-    themeSystem: 'bootstrap3',
-    header: false,
-    selectable: true,
-    selectHelper: true,
-    selectOverlap: false,
-    contentHeight: 700,
-    editable: true,
-    eventColor: '#FE4365',
-    eventBorderColor: "#FC9D9A",
 
-  })};
-    </script>
 
-    <div id="listPatient">
-      <ul>
-        <li>
-          <p> Nom : John Doe </p>
-          <p> Age : 32 years old</p>
-          <p> Medical past : Heart attack </p>
-          <p> Medication : Nitro </p>
-          <p> Consultation : described symptoms </p>
-          <p> Last consultation : 02/05/18 </p>
-        </li>
-      </ul>
-    </div>
+    <div class="calendar">
 
-    <div id="scheduleContainer">
-      <div id="schedule"></div>
-    </div>
+  <header>
+      <button class="secondary" style="align-self: flex-start; flex: 0 0 1">Today</button>
+      <div class="calendar__title" style="display: flex; justify-content: center; align-items: center">
+        <div class="icon secondary chevron_left">‹</div>
+        <h1 class="" style="flex: 1;"><span></span><strong>28 JAN – 1 FEB</strong> 2019</h1>
+        <div class="icon secondary chevron_left">›</div>
+      </div>
+      <div style="align-self: flex-start; flex: 0 0 1"></div>
+  </header>
 
-    
+  <div class="outer">
+
+
+  <table>
+  <thead>
+    <tr>
+      <th class="headcol"></th>
+      <th>Mon, 28</th>
+      <th>Tue, 29</th>
+      <th>Wed, 30</th>
+      <th>Thu, 31</th>
+      <th>Fri, 1</th>
+      <th class="secondary">Sat, 2</th>
+      <th class="secondary">Sun, 3</th>
+    </tr>
+  </thead>
+  </table>
+
+<div class="wrap">
+  <table class="offset">
+
+  <tbody>
+    <tr>
+      <td class="headcol"></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="headcol">8:00</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="headcol"></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="headcol">10:00</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="headcol"></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="headcol">11:00</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="headcol"></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="headcol">12:00</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="headcol"></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="headcol">13:00</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="headcol"></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="headcol">14:00</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="headcol"></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="headcol">15:00</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="headcol"></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="headcol">16:00</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="headcol"></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="headcol">17:00</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="headcol"></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+    <script src='js/calendar.appt.js'></script>
+
+
   </body>
 </html>
