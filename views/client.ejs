@@ -1,40 +1,65 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Page Title</title>
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel='stylesheet' href='css/fullcalendar.css' />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="js/moment.min.js"></script>
-    <script src='js/fullcalendar.js'></script>
+    <title>Client</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
   </head>
-
   <body>
-    <div id="listOfClinics">
-        <ul>
-        <%listOfClinics.forEach( (clinic) => {%>
-          <li class="clinic">
-            <p class="name">
-              <%=clinic.name%>
-            </p>
-            <p class="add">
-              <%=clinic.address%>
-            </p>
-            <p class="tel">
-              <%=clinic.open%><br/>
-              <%=clinic.close%>
-            </p>
-          </li>
-        <% }) %>
-        </ul>
-    </div>
+    <div id="map"></div>
+    <script>
+      var map;
 
-    <div id="scheduleContainer">
-      <div id="schedule"></div>
-    </div>
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 45.4956567, lng: -73.578844},
+          zoom: 10
+        });
+        var clinics = <%-JSON.stringify(getAllClinics)%>; //Saves var from server
+        clinics.forEach((clinic) => {
+          var lat = clinic.lat;
+          var long = clinic.long;
+          var name = clinic.name;
+          var address = clinic.address;
+          var id = clinic._id;
+          var m = new google.maps.Marker({
+            position: {lat: lat, lng: long},
+            map: map,
+            name: name,
+            address: address,
+            id: id
+          });
+          popup(m, id);
+        })
+        //addMarker(45.497115, -73.5886967, "Montreal General Hospital", "1650 Cedar Ave, Montreal, QC H3G 1A4", "5c4d181acffbde03984ec16f");
+        //Add marker function
 
-    <script src="js/schedule.js"></script>
+        function popup(marker, secretMessage) {
+          var infowindow = new google.maps.InfoWindow({
+            content: secretMessage,
+          });
+
+          marker.addListener('click', function() {
+            infowindow.open(marker.get('map'), marker);
+          });
+        }
+
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBoPYseXDgfl7A831YzP6wQljr0yXA-3Pw&callback=initMap"
+    async defer></script>
   </body>
-
 </html>
