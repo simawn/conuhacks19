@@ -266,7 +266,22 @@ BlockedCell.className = "event single";
 BlockedCell.textContent = 'Appointment';
 cellId.appendChild(BlockedCell);
 });
+</script>
 
+<script>
+var allClinicSlots = <%-JSON.stringify(allClinicSlots)%>;
+var userId = <%-JSON.stringify(userId)%>;
+allClinicSlots.forEach((td_id) => {
+
+  if(td_id.userId == userId){
+    return;
+  }
+  var cellId = document.getElementById(td_id.cellId);
+var BlockedCell = document.createElement('div');
+BlockedCell.className = "event single red";
+BlockedCell.textContent = 'Appointment';
+cellId.appendChild(BlockedCell);
+});
 </script>
   </body>
 </html>
