@@ -21,20 +21,24 @@
     <div class="col" id="client">
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7g5nMVV6uUjQdi1-CoN0Mf2GQGZCKHV7s_npR6ftRMiRNtbl1" class="image" style = "height: 780px; width:100%">
       <div class="middle">
-        <button type="button" class="btn btn-primary btn-lg">Client</button>
+        <form class="form" onsubmit="location.href='./client/' + document.getElementById('clientID').value; return false;" method="post">
+          <input type="text" id="clientID" name="clientID" placeholder="ID" required><br><br>
+          <input type="submit" value="Client" class="btn btn-primary btn-lg">
+        </form>
       </div>
     </div>
     <div class="col" id="doctor">
       <img src="https://cdn2.iconfinder.com/data/icons/medicine-4-1/512/doctor_appointment-512.png" class="image" style = "height: 715px; width:100%">
       <div class="middle">
-        <button type="button" class="btn btn-primary btn-lg">Doctor</button>
+        <form class="form" onsubmit="location.href='./doctor/' + document.getElementById('doctorID').value; return false;" method="post">
+          <input type="text" id= "doctorID" name="doctorID" placeholder="ID" required><br><br>
+          <input type="submit" value="Doctor" class="btn btn-primary btn-lg">
+        </form>
       </div>
     </div>
 
   </div>
 
-
-  </div>
 </body>
 
 </html>
