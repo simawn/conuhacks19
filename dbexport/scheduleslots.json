@@ -1,0 +1,10 @@
+{"_id":{"$oid":"5c4d77ea77a349655c6f22cb"},"clinicId":{"$oid":"5c4ccbea6eb4fb4168c5218f"},"userId":{"$oid":"5c4cc4e2a78cb71f480bb4e9"},"cellId":{"$numberInt":"59"},"symptoms":"iz sick","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5c4d7f991d77594e70500818"},"clinicId":{"$oid":"5c4ccbea6eb4fb4168c5218f"},"userId":{"$oid":"5c4cc4e2a78cb71f480bb4e9"},"cellId":{"$numberInt":"19"},"symptoms":"sick asubcn","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5c4d802859c84e59fcf42a01"},"clinicId":{"$oid":"5c4d181acffbde03984ec16f"},"userId":{"$oid":"5c4cc4e2a78cb71f480bb4e9"},"cellId":{"$numberInt":"44"},"symptoms":"sdasdas","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5c4d8178b5519f1dec01f180"},"clinicId":{"$oid":"5c4d5efbf3257f5d103035c7"},"userId":{"$oid":"5c4cc4e2a78cb71f480bb4e9"},"cellId":{"$numberInt":"34"},"symptoms":"sb","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5c4d81c9ef200157ccc94704"},"clinicId":{"$oid":"5c4ccbea6eb4fb4168c5218f"},"userId":{"$oid":"5c4cc4e2a78cb71f480bb4e9"},"cellId":{"$numberInt":"46"},"symptoms":"sassa","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5c4d88c4347f2c56b00f937a"},"clinicId":{"$oid":"5c4ccbea6eb4fb4168c5218f"},"userId":{"$oid":"5c4cc4e2a78cb71f480bb4e9"},"cellId":{"$numberInt":"37"},"symptoms":"ascasc","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5c4d89c3347f2c56b00f937b"},"clinicId":{"$oid":"5c4d181acffbde03984ec16f"},"userId":{"$oid":"5c4d685ac500901fe0268542"},"cellId":{"$numberInt":"27"},"symptoms":"Im sick","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5c4d89e2347f2c56b00f937c"},"clinicId":{"$oid":"5c4ccbea6eb4fb4168c5218f"},"userId":{"$oid":"5c4d685ac500901fe0268542"},"cellId":{"$numberInt":"34"},"symptoms":"adds","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5c4d8a2f347f2c56b00f937d"},"clinicId":{"$oid":"5c4ccbea6eb4fb4168c5218f"},"userId":{"$oid":"5c4d688bc500901fe0268543"},"cellId":{"$numberInt":"17"},"symptoms":"sS","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5c4d8b13347f2c56b00f937e"},"clinicId":{"$oid":"5c4ccbea6eb4fb4168c5218f"},"userId":{"$oid":"5c4d685ac500901fe0268542"},"cellId":{"$numberInt":"6"},"symptoms":"tghjbkmlfgvhjbn","__v":{"$numberInt":"0"}}
