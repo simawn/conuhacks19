@@ -16,6 +16,7 @@
       <input class="formBtn" type="submit"/>
     </form>
 
+
  <div id="header">
       <p> Hi <strong><%= userName%></strong></p>
       <p> Let's make an appointment to <strong> <%= clinicName%></strong></p>
@@ -59,7 +60,7 @@
       <td class="headcol"></td>
       <td></td>
       <td></td>
-      <td class="past"></td>
+      <td></td>
       <td></td>
       <td></td>
       <td></td>
@@ -68,51 +69,31 @@
     <tr>
       <td class="headcol">8:00</td>
       <td></td>
-      <td><div class="event single green">08:00–08:30 Meeting</div></td>
-      <td class="past"><div class="event single purple">08:00–08:30 Meeting</div></td>
-      <td><div class="event single">08:00–08:30 Meeting</div></td>
       <td></td>
-      <td><div class="event single purple">08:00–08:30 Meeting</div></td>
-      <td><div class="event single">08:00–08:30 Meeting</div></td>
-    </tr>
-    <tr>
-      <td class="headcol"></td>
-      <td><div class="event single">08:30–09:00 Meeting</div></td>
       <td></td>
-      <td class="past"><div class="event single ">08:30–09:00 Meeting</div></td>
-      <td><div class="event single ">08:30–09:00 Meeting</div></td>
-      <td><div class="event single green">08:30–09:00 Meeting</div></td>
-      <td><div class="event single green">08:30–09:00 Meeting</div></td>
-      <td><div class="event single ">08:30–09:00 Meeting</div></td>
-    </tr>
-    <tr>
-      <td class="headcol">9:00</td>
       <td></td>
-      <td><div class="event single purple">09:00–09:30 Meeting</div></td>
-      <td class="past"><div class="event single">09:00–09:30 Meeting</div></td>
       <td></td>
-      <td><div class="event single green">09:00–09:30 Meeting</div></td>
-      <td><div class="event single purple">09:00–09:30 Meeting</div></td>
-      <td><div class="event single">09:00–09:30 Meeting</div></td>
+      <td></td>
+      <td></td>
     </tr>
     <tr>
       <td class="headcol"></td>
       <td></td>
-      <td><div class="event single">09:30–10:00 Meeting</div></td>
-      <td class="now"><div class="event single">09:30–10:00 Meeting</div></td>
-      <td><div class="event single red">09:30–10:00 Meeting</div></td>
-      <td><div class="event double ">09:30–10:30 Meeting</div></td>
-      <td><div class="event single green">09:30–10:00 Meeting</div></td>
-      <td><div class="event single red">09:30–10:00 Meeting</div></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
     </tr>
     <tr>
       <td class="headcol">10:00</td>
       <td></td>
-      <td><div class="event single">10:00–11:00 Meeting</div></td>
-      <td><div class="event single purple">10:00–10:30 Meeting</div></td>
-      <td><div class="event single">10:00–10:30 Meeting</div></td>
       <td></td>
-      <td><div class="event double purple">10:00–11:00 Meeting</div></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
       <td></td>
     </tr>
     <tr>
@@ -121,17 +102,17 @@
       <td></td>
       <td></td>
       <td></td>
-      <td><div class="event single green">10:00–11:00 Meeting</div></td>
+      <td></td>
       <td></td>
       <td></td>
     </tr>
     <tr>
       <td class="headcol">11:00</td>
-      <td><div class="event single purple">11:00–11:30 Meeting</div></td>
       <td></td>
       <td></td>
-      <td><div class="event single green">11:00–11:30 Meeting</div></td>
-      <td><div class="event single purple">11:00–11:30 Meeting</div></td>
+      <td></td>
+      <td></td>
+      <td></td>
       <td></td>
       <td></td>
     </tr>
@@ -148,8 +129,8 @@
     <tr>
       <td class="headcol">12:00</td>
       <td></td>
-      <td><div class="event single red">12:00–12:30 Meeting</div></td>
-      <td><div class="event double">12:00–12:30 Meeting</div></td>
+      <td></td>
+      <td></td>
       <td></td>
       <td></td>
       <td></td>
@@ -273,5 +254,14 @@
 
 
     <script src='js/calendar.appt.js'></script>
+
+        
+<script>
+var cellId = document.getElementById('1');
+var BlockedCell = document.createElement('div');
+BlockedCell.className = "event single";
+BlockedCell.textContent = 'Appointment';
+cellId.appendChild(BlockedCell);
+</script>
   </body>
 </html>

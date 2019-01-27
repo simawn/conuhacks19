@@ -58,7 +58,9 @@ app.post('/confirmAppointment', async (req, res) => {
     cellId = req.body.cellId;
     userId = req.body.userId;
     clinicId = req.body.clinicId;
-    console.log(`${firstName}, ${lastName}, ${cellId}, ${userId}, ${clinicId}`);
+    symptoms = req.body.symptoms;
+    console.log(`${firstName}, ${lastName}, ${cellId}, ${userId}, ${clinicId}, ${symptoms}`);
+    addAppointment = await dbAPI.createScheduleSlot(clinicId, userId, cellId, symptoms);
     res.render('confirm', {
         userId: userId,
         clinicId: clinicId

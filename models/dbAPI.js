@@ -46,13 +46,13 @@ function createClinic(name, address, lat, long, open, close){
 }
 
 //Create new schedule slot
-function createScheduleSlot(clinicId, userId, start, end){
+function createScheduleSlot(clinicId, userId, cellId, symptoms){
     return new Promise((resolve, reject) => {
         new ScheduleSlots({
             clinicId: mongoose.Types.ObjectId(clinicId),
             userId: mongoose.Types.ObjectId(userId),
-            start: start, //Unix Time. Seconds elapsed
-            end: end //Unix Time. Seconds elapsed
+            cellId: cellId, //Unix Time. Seconds elapsed
+            symptoms: symptoms //Unix Time. Seconds elapsed
         }).save((err, result) => {
             if(err) reject(err);
             resolve(result);
