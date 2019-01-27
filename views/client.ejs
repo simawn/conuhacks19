@@ -52,7 +52,9 @@
           var infowindow = new google.maps.InfoWindow({
             content: '<b>' + name + '</b>'+ '</br>' + 
             addr + '</br>' + 
-            '<a href=appointment/'+ userId +'/'+ clinicId +'>Click here to make an appointment</a>',
+            'Click below to make an appointment: </br>' +
+            '<form action="/appointment" method="post"> <input type = "hidden" name = "userId" value = "'+userId+'" /><input type = "hidden" name = "clinicId" value = "'+clinicId+'" /><input type="submit" value="Go"></input></form>'
+            ,
           });
 
           marker.addListener('click', function() {

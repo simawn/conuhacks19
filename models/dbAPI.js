@@ -76,7 +76,7 @@ function getAllAppointmentsFrom(clinicId){
 function getClinicInfoFor(clinicId){
     return new Promise((resolve, reject) => {
         Clinics.findOne({
-            _id: mongoose.Types.ObjectId(clinicId)
+            _id: clinicId
         }).exec((err, result) => {
             if(err) reject(err);
             resolve(result);
@@ -88,7 +88,7 @@ function getClinicInfoFor(clinicId){
 function getUserInfoFor(userId){
     return new Promise((resolve, reject) => {
         Users.findOne({
-            _id: mongoose.Types.ObjectId(userId)
+            _id: userId
         }).exec((err, result) => {
             if(err) reject(err);
             resolve(result);
