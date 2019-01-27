@@ -5,7 +5,9 @@
     <link rel="stylesheet" href="css/calendar-appt.css">
   </head>
   <body>
-
+ <div id="header">
+      <p> Current appointments for <strong><%= clinicName%></strong></p>
+    </div>
 
     <div class="calendar">
 
@@ -239,7 +241,17 @@
 
 
     <script src='js/calendar.appt.js'></script>
+<script>
+var clinicSlots = <%-JSON.stringify(listClinicSlots)%>;
+clinicSlots.forEach((td_id) => {
+  var cellId = document.getElementById(td_id.cellId);
+var BlockedCell = document.createElement('div');
+BlockedCell.className = "event single";
+BlockedCell.textContent = 'Appointment';
+cellId.appendChild(BlockedCell);
+});
 
+</script>
 
   </body>
 </html>

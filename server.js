@@ -33,9 +33,13 @@ app.get('/client/:userId', async (req, res) => {
 //doctor. We cannot GET since it will break the CSS
 app.post('/doctor', async (req, res) => {
     clinicId = req.body.clinicID;
+    clinicSlots = await dbAPI.getAllAppointmentsFrom(clinicId);
+    clinicObj = await dbAPI.getClinicInfoFor(clinicId);
     console.log(req.body);
-    res.send(clinicId);
-    //res.render('doctor');
+    res.render('doctor', {
+        listClinicSlots: clinicSlots,
+        clinicName: clinicObj.name
+    });
 });
 
 //appointment
