@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  $("#schedule").fullCalendar({
+  $("#scheduleClient").fullCalendar({
     weekends: false,
     defaultView:'agendaWeek',
     minTime: "08:0:00",
